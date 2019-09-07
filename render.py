@@ -18,18 +18,24 @@ class Point:
 
 	def rotateX(self,angle=1):		#cos(a+tht), sin(a+tht)
 		theta=angle*np.pi/180
-		self.y=self.y*np.cos(theta) - self.z*np.sin(theta)
-		self.z=self.y*np.sin(theta) + self.z*np.cos(theta)
+		sintht = np.sin(theta)
+		costht = np.cos(theta)
+		self.y=self.y*costht - self.z*sintht
+		self.z=self.y*sintht + self.z*costht
 
 	def rotateY(self,angle=1):
 		theta=angle*np.pi/180
-		self.z=self.z*np.cos(theta) - self.x*np.sin(theta)
-		self.x=self.z*np.sin(theta) + self.x*np.cos(theta)
+		sintht = np.sin(theta)
+		costht = np.cos(theta)
+		self.z=self.z*costht - self.x*sintht
+		self.x=self.z*sintht + self.x*costht
 
 	def rotateZ(self,angle=1):
 		theta=angle*np.pi/180
-		self.x=self.x*np.cos(theta) - self.y*np.sin(theta)
-		self.y=self.x*np.sin(theta) + self.y*np.cos(theta)
+		sintht = np.sin(theta)
+		costht = np.cos(theta)
+		self.x=self.x*costht - self.y*sintht
+		self.y=self.x*sintht + self.y*costht
 
 	def project(self):
 		factor = 2000/(15+self.z)
