@@ -16,7 +16,7 @@ class Point:
 	def xyz(self):
 		return self.x,self.y,self.z
 
-	def rotateX(self,angle=1):		#cos(a+tht), sin(a+tht)
+	def rotateX(self,angle=1):		#(rcos(a),rsin(a)) --> (rcos(a+tht), rsin(a+tht))
 		theta=angle*np.pi/180
 		sintht = np.sin(theta)
 		costht = np.cos(theta)
